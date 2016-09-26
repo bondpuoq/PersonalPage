@@ -1,0 +1,60 @@
+$frame-width: 660px;
+$frame-height: 755px;
+$screen-width: 1000px;
+
+@mixin box-sizing {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  font-family: 'Myriad Pro Regular', 'Helvetica', 'Verdana';
+  font-size: 16px;
+}
+
+body {
+  background: url('../img/bg.png') repeat-y;
+}
+
+input[type="text"] {
+  border-bottom: 3px solid rgb(0,0,0); //цвет рамки
+  border: none;
+  border-radius: 3px; //закругление углов (общее)
+  background: rgba('255,255,255,0.5'); // желательно прописывать, так как в Chrome при сохранных данных оно может быть желтым
+  outline: none; // удаляет обводку в браузерах хром(желтая) и сафари(синяя)
+  height: 24px; // высота на свое усмотрение
+  width: 120px; // ширина на свое усмотрение
+  color: #cccccc; //цвет шрифта в обычном состоянии
+  font-size: 11px; // Размер шрифта
+  font-family: Tahoma; // Стиль шрифта
+}
+
+.container {
+  max-width: $frame-width;
+  max-height: $frame-height;
+  margin: 0 auto;
+  @include box-sizing;
+}
+
+.person-photo {
+  border-radius: 50%;
+  overflow: hidden;
+  background: url('../img/bruce.png');
+  float: left;
+  @include box-sizing;
+  max-width: 180px;
+}
+
+.person-data {
+  float: right;
+  @include box-sizing;
+  max-width: 480px;
+}
+
+.clearfix {
+  clear: both;
+  display: table;
+  width: 100%;
+  content: '';
+}
